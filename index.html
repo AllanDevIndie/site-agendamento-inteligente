@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rogério Cabelos | Agendamento de Barber Shop</title>
+  <meta name="description" content="Agende seu corte de cabelo e bigode no Rogério Cabelos em menos de 1 minuto. Atendimento inteligente, rápido e sem filas.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Efeito Barber Pole no Topo -->
+  <div class="barber-pole-border"></div>
+
+  <!-- Banner de Banco de Dados Local (Mock) -->
+  <div id="mock-db-banner">
+    ⚠️ Usando banco de dados local. Para salvar seus dados em nuvem, acesse o painel admin (no rodapé) e configure a URL do Google Sheets.
+  </div>
+
+  <!-- Loader Global -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Carregando dados...</p>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container" id="logo-title" title="Dê duplo clique para acessar o Painel Admin">
+      <span class="logo-icon">💈</span>
+      <div class="logo-text">
+        <h1>Rogério Cabelos</h1>
+        <span>Cortes &amp; Bigodes</span>
+      </div>
+    </div>
+    <div class="social-header">
+      <a href="https://www.instagram.com/rogerio.cabelos/" target="_blank" aria-label="Instagram">
+        Instagram 📸
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <p class="hero-subtitle">Agendamento Inteligente</p>
+      <h2>O estilo vintage com a praticidade moderna</h2>
+      <p class="hero-description">
+        Diga adeus às filas de espera. Agende seu horário online em menos de 1 minuto para receber um atendimento exclusivo com o barbeiro <strong>Rogério Alves</strong>.
+      </p>
+      <div class="hero-service-badge">
+        <span>Corte Completo (Cabelo e Bigode)</span>
+        <span class="price">R$ 35,00</span>
+      </div>
+    </section>
+
+    <!-- FUNNEL DE AGENDAMENTO -->
+    <section class="funnel-container">
+      
+      <!-- STEP 1: DIA -->
+      <div class="step-card" id="step-date">
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <h3>Escolha o Dia</h3>
+        </div>
+        <div class="date-grid" id="date-options">
+          <!-- Gerado dinamicamente via JS -->
+        </div>
+      </div>
+
+      <!-- STEP 2: HORÁRIO -->
+      <div class="step-card disabled-step" id="step-time">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <h3>Escolha o Horário</h3>
+        </div>
+        <div class="time-grid" id="time-options">
+          <!-- Gerado dinamicamente via JS -->
+        </div>
+      </div>
+
+      <!-- STEP 3: DADOS E CONFIRMAÇÃO -->
+      <div class="step-card disabled-step" id="step-client">
+        <div class="step-header">
+          <div class="step-number">3</div>
+          <h3>Seus Dados</h3>
+        </div>
+        <form class="client-form" id="booking-form">
+          <div class="form-group">
+            <label for="client-name">Seu Nome Completo</label>
+            <input type="text" id="client-name" placeholder="Ex: João Silva" required>
+          </div>
+          <div class="form-group">
+            <label for="client-phone">Seu WhatsApp (com DDD)</label>
+            <input type="tel" id="client-phone" placeholder="Ex: (81) 9110-3045" required>
+          </div>
+          
+          <div class="summary-card">
+            <h4>Resumo do Agendamento:</h4>
+            <div id="booking-summary">
+              <!-- Gerado dinamicamente via JS -->
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-primary ripple">Confirmar Agendamento</button>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- SEÇÃO DE PRODUTOS -->
+    <section class="products-section">
+      <h3>Produtos de Cuidado Pessoal</h3>
+      <p class="products-subtitle">Adquira no salão durante o seu atendimento</p>
+      
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-icon">🧴</div>
+          <h4>Gel Modelador</h4>
+          <p>Fixação forte com efeito brilho para o penteado perfeito.</p>
+          <span class="product-price">R$ 20,00</span>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🧴</div>
+          <h4>Pomada Modeladora</h4>
+          <p>Efeito matte (seco) com fixação média, ideal para o dia a dia.</p>
+          <span class="product-price">R$ 25,00</span>
+        </div>
+        <div class="product-card">
+          <div class="product-icon">🧔</div>
+          <h4>Óleo de Barba</h4>
+          <p>Hidrata os fios da barba e deixa um aroma suave de barbearia clássica.</p>
+          <span class="product-price">R$ 30,00</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-info">
+      <div class="info-block">
+        <h5>Funcionamento</h5>
+        <p>Segunda a Sábado</p>
+        <p>09:00h às 12:00h</p>
+        <p>15:00h às 18:00h</p>
+      </div>
+      <div class="info-block">
+        <h5>Contato</h5>
+        <p>WhatsApp: <a href="https://wa.me/558191103045" target="_blank">+55 81 9110-3045</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/rogerio.cabelos/" target="_blank">@rogerio.cabelos</a></p>
+      </div>
+      <div class="info-block">
+        <h5>Endereço</h5>
+        <p>Salão Rogério Cabelos</p>
+        <p>Região Metropolitana</p>
+        <p>Pernambuco - PE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rogério Cabelos. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://devalbk.com.br/">DevAlbk</a></p>
+      <a href="#" id="footer-admin-link">Painel Administrativo</a>
+    </div>
+  </footer>
+
+  <!-- MODAL DE SUCESSO -->
+  <div class="modal" id="success-modal">
+    <div class="modal-content">
+      <div class="modal-icon">✔</div>
+      <h3>Pedido Enviado!</h3>
+      <div id="success-modal-text">
+        <!-- Gerado via JS -->
+      </div>
+      <button type="button" class="btn-modal-close" id="close-modal-btn">Entendido</button>
+    </div>
+  </div>
+
+  <!-- PAINEL ADMIN (SLIDE OVERLAY) -->
+  <div class="admin-panel-overlay" id="admin-panel">
+    <div class="admin-panel-content">
+      <div class="admin-panel-header">
+        <h2>Painel Admin - Rogério Cabelos</h2>
+        <button type="button" class="close-admin-btn" id="close-admin-btn">&times;</button>
+      </div>
+      
+      <!-- Configuração da Planilha (Colapsável e Protegida) -->
+      <details class="admin-config-details" style="padding: 15px 20px; border-bottom: 1px solid var(--border-color); background-color: rgba(255,255,255,0.02);">
+        <summary style="font-family: var(--font-title); font-size: 0.9rem; color: var(--primary-brass); cursor: pointer; user-select: none; font-weight: 600;">
+          ⚙️ Configurações de Conexão (Avançado)
+        </summary>
+        <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px;">
+          <p style="font-size: 0.75rem; color: #ff7043; margin-bottom: 5px; font-weight: 500; line-height: 1.4;">
+            ⚠️ ATENÇÃO: Não altere esta URL sem necessidade. O preenchimento incorreto fará o site parar de realizar agendamentos.
+          </p>
+          <input type="password" id="sheet-url-input" placeholder="URL do Google Sheets (Bloqueada por segurança)" disabled style="width: 100%; background-color: var(--bg-input); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 6px; color: var(--text-light); font-size: 0.85rem; outline: none; transition: var(--transition-smooth);">
+          <div style="display: flex; gap: 10px; width: 100%;">
+            <button type="button" id="edit-sheet-btn" style="flex: 1; background-color: transparent; border: 1px solid var(--primary-brass); color: var(--primary-brass); padding: 8px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">Editar</button>
+            <button type="button" id="save-sheet-btn" style="flex: 1; display: none; background-color: var(--success-color); border: none; color: white; padding: 8px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">Salvar Alteração</button>
+          </div>
+        </div>
+      </details>
+      
+      <!-- Lista de Agendamentos -->
+      <div class="admin-bookings-container">
+        <h3>Lista de Agendamentos</h3>
+        <div id="admin-bookings-list">
+          <!-- Carregado via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="app.js"></script>
+</body>
+</html>
